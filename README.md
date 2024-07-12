@@ -18,4 +18,5 @@ wesley.j.locklair@gmail.com
 
 ## Video Demo!
 
-    [Untitled_ Jul 11, 2024 9_12 PM.webm](https://github.com/user-attachments/assets/8f43b6fe-2066-4a34-a219-6b6b6ca3a879)
+  
+[Logo Maker Demo Video.webm](https://github.com/user-attachments/assets/c9a9c2f9-d967-48b0-badd-82a19ac78915)
