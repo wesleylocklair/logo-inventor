@@ -1,5 +1,8 @@
 const fs = require('fs')
 const inquirer = require('inquirer')
+const Square = require('./lib/shape.js')
+const Triangle = require('./lib/shape')
+const Circle = require('./lib/shape')
 
 inquirer
   .prompt([
@@ -35,29 +38,34 @@ inquirer
       },
   ])
   .then((response) => {
-   if(response.shapelist === 'circle'){
-    const mysvglogo = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-
-    <circle cx="150" cy="100" r="90" fill="${response.shapecolor}" />
-    <text x="150" y="125" font-size="60" text-anchor="middle" fill="${response.textcolor}">${response.textcontent}</text>
-    </svg>`
-          fs.writeFile('logo.svg', mysvglogo, (err) => { 
+  if(response.shapelist === 'circle'){
+    const mysvglogo = new Circle(
+      response.shapecolor,
+      response.textcolor,
+      response.textcontent
+    )
+const svg = mysvglogo.render()
+          fs.writeFile('logo.svg', svg, (err) => { 
               err ? console.error(err) : console.log('Generated! logo.svg!')})
    }
 else if(response.shapelist === 'triangle'){
-const svglogotriangle = `<svg height="220" width="500" xmlns="http://www.w3.org/2000/svg">
-  <polygon points="150,10 280,200 10,200" fill="${response.shapecolor}" />
-  <text x="145" y="150" font-size="60" text-anchor="middle" fill="${response.textcolor}">${response.textcontent}</text>
-</svg>`
-        fs.writeFile('logo.svg', svglogotriangle, (err) => { 
+const svglogotriangle = new Triangle (
+  response.shapecolor,
+  response.textcolor,
+  response.textcontent
+)
+const svg = svglogotriangle.render()
+        fs.writeFile('logo.svg', svg, (err) => { 
           err ? console.error(err) : console.log('Generated! logo.svg!')})
 }
   else if(response.shapelist === 'square'){
-    const svglogosquare = `<svg height="220" width="500" xmlns="http://www.w3.org/2000/svg">
-    <rect width="200" height="200" x="10" y="10" fill="${response.shapecolor}" />
-    <text x="150" y="125" font-size="60" text-anchor="middle" fill="${response.textcolor}">${response.textcontent}</text>
-  </svg>`
-          fs.writeFile('logo.svg', svglogosquare, (err) => { 
+    const svglogosquare = new Square (
+      response.shapecolor,
+      response.textcolor,
+      response.textcontent
+    )
+    const svg = svglogosquare.render()
+          fs.writeFile('logo.svg', svg, (err) => { 
             err ? console.error(err) : console.log('Generated! logo.svg!')})
 
   }
