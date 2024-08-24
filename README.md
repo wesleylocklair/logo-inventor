@@ -15,4 +15,6 @@ https://github.com/wesleylocklair
 
 My Email Address:
 wesley.j.locklair@gmail.com
-    
+
+## Video Demo!
+[Logo Maker Demo Video.webm](https://github.com/user-attachments/assets/868473bb-638c-4aa2-8c6f-5a968fbf0a72)
